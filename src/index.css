@@ -1,1 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap');
 @import "tailwindcss";
+
+:root {
+  --bg-primary: #030303;
+  --bg-secondary: #0A0A0A;
+  --bg-card: #0D0D0D;
+  --bg-elevated: #141414;
+  --border-subtle: #1A1A1A;
+  --border-normal: #222222;
+  --border-active: #333333;
+  --text-primary: #F0F0F0;
+  --text-secondary: #A0A0A0;
+  --text-muted: #555555;
+  --accent-green: #00FF41;
+  --accent-green-dim: rgba(0, 255, 65, 0.1);
+  --accent-amber: #F59E0B;
+  --accent-amber-dim: rgba(245, 158, 11, 0.1);
+  --accent-blue: #3B82F6;
+  --accent-blue-dim: rgba(59, 130, 246, 0.1);
+  --accent-red: #EF4444;
+  --glow-green: 0 0 20px rgba(0, 255, 65, 0.15);
+  --glow-amber: 0 0 20px rgba(245, 158, 11, 0.15);
+}
+
+@theme {
+  --font-sans: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+/* Custom scrollbar for terminals and feeds list */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-normal);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green);
+}
+
+/* Custom terminal font & background classes */
+.terminal-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Unified Card styling as specified */
+.unified-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-normal);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.unified-card:hover {
+  border-color: var(--border-active);
+  box-shadow: var(--glow-green);
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-elevated) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
