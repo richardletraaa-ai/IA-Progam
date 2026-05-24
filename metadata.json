@@ -1,0 +1,6 @@
+{
+  "name": "Global AI Finance Activity Tracker",
+  "description": "An interactive terminal-style tracker and AI analytics engine for global AI market indices, merger news, capital flows to tech hubs, and core adoption predictions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
